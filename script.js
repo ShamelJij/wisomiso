@@ -58,16 +58,16 @@ const questionData = [
 },
   {
     id: 5,
-    question: "Welcher der folgenden Sachverhalte entspricht dem Prinzip der Solidarität?",
+    question: "Die Solidarität ist ein gesellschaftspolitisches Prinzip, das in der Bundesrepublik Deutschland angewendet wird.Welcher der folgenden Sachverhalte entspricht dem Prinzip der Solidarität?",
     choices: [
         "Der Staat hebt die Beitragsbemessungsgrenze für die gesetzliche Krankenkasse an.",
-        "Der Staat fordert verstärkt Selbstverantwortung bei der Altersversorge.",
+        "Der Staat fordert verstärkt Selbstverantwortung bei der Altersvorsorge.",
         "Der Spitzensteuersatz bei der Einkommenssteuer wird gesenkt.",
         "Kindergartenbeiträge sind für alle Eltern, unabhängig vom Einkommen, gleich hoch.",
         "Der Beitrag zur Krankenversicherung steigt mit individuellem Krankheitsrisiko des Versicherten."
     ],
-    correctAnswers: [4], // Correct answer is option number 4 (starting from 1)
-    explanation: "Das Prinzip der Solidarität in diesem Fall bedeutet, dass alle Eltern unabhängig von ihrem Einkommen gleich hohe Kindergartenbeiträge zahlen. Dies fördert die Gleichbehandlung und die finanzielle Solidarität innerhalb der Gesellschaft, indem es gleiche Zugangsmöglichkeiten zu Bildungseinrichtungen sicherstellt."
+    correctAnswers: [1], // Correct answer is option number 1 (starting from 1)
+    explanation: "Das Prinzip der Solidarität in der gesetzlichen Krankenversicherung bedeutet, dass Menschen mit höherem Einkommen mehr in die Krankenversicherung einzahlen, um diejenigen zu unterstützen, die weniger verdienen. Wenn die Beitragsbemessungsgrenze angehoben wird, tragen Menschen mit höherem Einkommen einen größeren Teil der Kosten, was dem Prinzip der Solidarität entspricht."
 },{
     id: 6,
     question: "Welche der folgenden Aussagen zur GmbH ist zutreffend?",
@@ -227,18 +227,6 @@ const questionData = [
     ],
     correctAnswers: [2], // Correct answer is option number 2 (starting from 1)
     explanation: "Wenn das Bruttogehalt eines Arbeitnehmers die Beitragsbemessungsgrenze für die gesetzliche Rentenversicherung übersteigt, müssen sie nur für den Teil ihres Gehalts Rentenversicherungsbeiträge leisten, der innerhalb dieser Grenze liegt. Gehälter über dieser Grenze sind von der Rentenversicherung befreit."
-},{
-    id: 19,
-    question: "Die Solidarität ist ein gesellschaftspolitisches Prinzip, das in der Bundesrepublik Deutschland angewendet wird.Welcher der folgenden Sachverhalte entspricht dem Prinzip der Solidarität?",
-    choices: [
-        "Der Staat hebt die Beitragsbemessungsgrenze für die gesetzliche Krankenkasse an.",
-        "Der Staat fordert verstärkt Selbstverantwortung bei der Altersvorsorge.",
-        "Der Spitzensteuersatz bei der Einkommenssteuer wird gesenkt.",
-        "Kindergartenbeiträge sind für alle Eltern, unabhängig vom Einkommen, gleich hoch.",
-        "Der Beitrag zur Krankenversicherung steigt mit individuellem Krankheitsrisiko des Versicherten."
-    ],
-    correctAnswers: [1], // Correct answer is option number 1 (starting from 1)
-    explanation: "Das Prinzip der Solidarität in der gesetzlichen Krankenversicherung bedeutet, dass Menschen mit höherem Einkommen mehr in die Krankenversicherung einzahlen, um diejenigen zu unterstützen, die weniger verdienen. Wenn die Beitragsbemessungsgrenze angehoben wird, tragen Menschen mit höherem Einkommen einen größeren Teil der Kosten, was dem Prinzip der Solidarität entspricht."
 }
 ];
 
@@ -258,7 +246,7 @@ function getRandomVariant(variants) {
 }
 
 function showPercentage(){
-    const qData = `Answered Questions: ${answeredQuestions}<br>Correct Percentage: ${correctPercentage}%`;
+    const qData = `Fragen beantwortet: ${answeredQuestions}<br>Erfolgsprozent: ${correctPercentage}%`;
     document.getElementById('showPercentage').innerHTML = qData;
 }
 
