@@ -1,3 +1,6 @@
+let answeredQuestions = 0;
+let correctPercentage = 0;
+let userCorrectAnswers = 0;
 
 const questionData = [
     {
@@ -142,7 +145,7 @@ const questionData = [
     explanation: "Diese Formulierung stellt eine Diskriminierung aufgrund des Alters dar, was gegen das Allgemeine Gleichbehandlungsgesetz (AGG) verstößt. Diskriminierende Einstellungspraktiken aufgrund des Alters sind in Deutschland nach dem AGG verboten."
 },{
     id: 12,
-    question: "In der Geschäftsführung der GreenByte GmbH werden Maßnahmen zur Arbeitssicherheit im Unternehmen diskutiert.<br><br>Welche der folgenden Aussagen trifft auf die Arbeitssicherheit im Unternehmen zu?",
+    question: "In der Geschäftsführung der GreenByte GmbH werden Maßnahmen zur Arbeitssicherheit im Unternehmen diskutiert.Welche der folgenden Aussagen trifft auf die Arbeitssicherheit im Unternehmen zu?",
     choices: [
         "Betriebliche Arbeitsschutzbestimmungen sind eine freiwillige Leistung des Arbeitgebers.",
         "Betriebliche Arbeitsschutzbestimmungen gelten nur, wenn sie tarifvertraglich vereinbart wurden.",
@@ -154,7 +157,7 @@ const questionData = [
     explanation: "Gemäß dem Arbeitsschutzgesetz ist der Arbeitgeber verpflichtet, alle erforderlichen Maßnahmen des Arbeitsschutzes zu treffen, um die Sicherheit und Gesundheit der Mitarbeiter zu gewährleisten. Dies beinhaltet die Überwachung der Einhaltung dieser Maßnahmen im Betrieb."
 },{
     id: 13,
-    question: "Die GreenByte GmbH möchte zukünftig in den Arbeitsverträgen eine Probezeit von sechs Monaten vereinbaren.<br><br>Welche der folgenden Aussagen trifft auf die Probezeit zu?",
+    question: "Die GreenByte GmbH möchte zukünftig in den Arbeitsverträgen eine Probezeit von sechs Monaten vereinbaren.Welche der folgenden Aussagen trifft auf die Probezeit zu?",
     choices: [
         "Eine Probezeit darf nur bei unbefristeten Arbeitsverträgen vereinbart werden.",
         "Eine Probezeit von sechs Monaten ist gesetzlich zulässig.",
@@ -166,7 +169,7 @@ const questionData = [
     explanation: "Eine Probezeit von sechs Monaten ist gesetzlich zulässig. Während der Probezeit haben Arbeitgeber und Arbeitnehmer die Möglichkeit, die Eignung und Passung des Arbeitsverhältnisses zu prüfen. In dieser Zeit gelten besondere Kündigungsfristen und Bedingungen, die im Arbeitsvertrag festgelegt werden können."
 },{
     id: 14,
-    question: "Die GreenByte GmbH ist Mitglied des Arbeitgeberverbandes.<br><br>Bei welcher der folgenden Vereinbarungen des Arbeitsvertrags ist die GreenByte GmbH an kollektives Arbeitsrecht gebunden?",
+    question: "Die GreenByte GmbH ist Mitglied des Arbeitgeberverbandes.Bei welcher der folgenden Vereinbarungen des Arbeitsvertrags ist die GreenByte GmbH an kollektives Arbeitsrecht gebunden?",
     choices: [
         "Die Wochenarbeitszeit beträgt regelmäßig 38 Stunden.",
         "Das Arbeitsverhältnis beginnt am 1. Juli 2021 und ist unbefristet.",
@@ -178,7 +181,7 @@ const questionData = [
     explanation: "Im Arbeitgeberverband können Tarifverträge bestehen, die die wöchentliche Arbeitszeit für die Mitgliedsunternehmen regeln. Daher ist die Festlegung der regelmäßigen Wochenarbeitszeit eine Vereinbarung, die an das kollektive Arbeitsrecht gebunden sein kann."
 },{
     id: 15,
-    question: "In der Unternehmenszentrale der GreenByte GmbH in Hamburg arbeiten insgesamt 110 Mitarbeitende. Durch Unterbrechungen in der Lieferkette und Auftragsstörungen von Kunden können für voraussichtlich zwei Monate die Mitarbeitenden nur zum geringen Teil beschäftigt werden. Das Unternehmen möchte aber den Mitarbeitenden möglichst nicht kündigen, weil sich zum Jahresende die Auftragslage voraussichtlich wieder normalisiert.<br><br>Welche der folgenden Aussagen trifft zu?",
+    question: "In der Unternehmenszentrale der GreenByte GmbH in Hamburg arbeiten insgesamt 110 Mitarbeitende. Durch Unterbrechungen in der Lieferkette und Auftragsstörungen von Kunden können für voraussichtlich zwei Monate die Mitarbeitenden nur zum geringen Teil beschäftigt werden. Das Unternehmen möchte aber den Mitarbeitenden möglichst nicht kündigen, weil sich zum Jahresende die Auftragslage voraussichtlich wieder normalisiert.Welche der folgenden Aussagen trifft zu?",
     choices: [
         "Die GreenByte GmbH muss allen Mitarbeitenden außerordentlich kündigen.",
         "Die GreenByte GmbH darf jederzeit die Gehälter der Mitarbeitenden kürzen.",
@@ -190,7 +193,7 @@ const questionData = [
     explanation: "In Situationen, in denen Mitarbeiter aufgrund vorübergehender Unterbrechungen in der Arbeitsbeschäftigung nicht vollständig beschäftigt werden können, können Unternehmen in Deutschland Kurzarbeitergeld bei der Bundesagentur für Arbeit beantragen. Dieses Programm unterstützt Unternehmen dabei, die Lohnkosten zu reduzieren, während die Mitarbeiter weiterhin beschäftigt bleiben. Die Mitarbeiter erhalten dann einen Teil ihres Lohns durch das Kurzarbeitergeld ausgeglichen."
 },{
     id: 16,
-    question: "Die berufliche Weiterbildung wird in der GreenByte GmbH gefördert, um die Wettbewerbsfähigkeit des Unternehmens auch in Zukunft zu gewährleisten.<br><br>Welche der folgenden Aussagen zur beruflichen Weiterbildung ist zutreffend?<br><br>Die berufliche Weiterbildung...",
+    question: "Die berufliche Weiterbildung wird in der GreenByte GmbH gefördert, um die Wettbewerbsfähigkeit des Unternehmens auch in Zukunft zu gewährleisten.Welche der folgenden Aussagen zur beruflichen Weiterbildung ist zutreffend?Die berufliche Weiterbildung...",
     choices: [
         "ist in der IT-Branche zur Vertiefung und Erweiterung von Kenntnissen und Fertigkeiten notwendig.",
         "ist für Arbeitnehmer grundsätzlich kostenpflichtig, weil die Weiterbildung überwiegend im persönlichen Interesse des Arbeitnehmers liegt.",
@@ -202,7 +205,7 @@ const questionData = [
     explanation: "In der IT-Branche, die sich durch rasche technologische Entwicklungen auszeichnet, ist berufliche Weiterbildung entscheidend, um mit den aktuellen Trends und Technologien Schritt zu halten und wettbewerbsfähig zu bleiben. Unternehmen investieren oft in die Weiterbildung ihrer Mitarbeiter, um deren Fähigkeiten und Kenntnisse auf dem neuesten Stand zu halten."
 },{
     id: 17,
-    question: "Eine Mitarbeiterin der GreenByte GmbH ist arbeitsunfähig, weil sie am Vortag auf dem direkten Weg zur Arbeit bei einem Sturz vom Fahrrad schwer verletzt wurde.<br><br>Welche der folgenden Aussagen ist in diesem Zusammenhang zutreffend?<br><br>Die GreenByte GmbH...",
+    question: "Eine Mitarbeiterin der GreenByte GmbH ist arbeitsunfähig, weil sie am Vortag auf dem direkten Weg zur Arbeit bei einem Sturz vom Fahrrad schwer verletzt wurde.Welche der folgenden Aussagen ist in diesem Zusammenhang zutreffend?Die GreenByte GmbH...",
     choices: [
         "muss den Unfall der Krankenversicherung der Mitarbeiterin melden.",
         "darf die Gehaltszahlung ab dem ersten Krankheitstag einstellen.",
@@ -214,7 +217,7 @@ const questionData = [
     explanation: "In Deutschland müssen Arbeitgeber Arbeitsunfälle, die sich auf dem Weg zur Arbeit oder während der Arbeit ereignen, der zuständigen Berufsgenossenschaft melden. Die Berufsgenossenschaft ist für die Versicherung und Entschädigung von Arbeitsunfällen zuständig."
 },{
     id: 18,
-    question: "Nach der letzten Gehaltserhöhung übersteigt das Bruttogehalt von Melanie Fuchs die Beitragsbemessungsgrenze für die gesetzliche Rentenversicherung.<br><br>Welche der folgenden Konsequenzen ergibt sich aus der Gehaltserhöhung für Frau Fuchs?<br><br>Frau Fuchs...",
+    question: "Nach der letzten Gehaltserhöhung übersteigt das Bruttogehalt von Melanie Fuchs die Beitragsbemessungsgrenze für die gesetzliche Rentenversicherung.Welche der folgenden Konsequenzen ergibt sich aus der Gehaltserhöhung für Frau Fuchs?Frau Fuchs...",
     choices: [
         "muss sich nun privat versichern.",
         "muss nun für einen Teil ihres Gehalts keinen Rentenversicherungsbeitrag mehr leisten.",
@@ -226,7 +229,7 @@ const questionData = [
     explanation: "Wenn das Bruttogehalt eines Arbeitnehmers die Beitragsbemessungsgrenze für die gesetzliche Rentenversicherung übersteigt, müssen sie nur für den Teil ihres Gehalts Rentenversicherungsbeiträge leisten, der innerhalb dieser Grenze liegt. Gehälter über dieser Grenze sind von der Rentenversicherung befreit."
 },{
     id: 19,
-    question: "Die Solidarität ist ein gesellschaftspolitisches Prinzip, das in der Bundesrepublik Deutschland angewendet wird.<br><br>Welcher der folgenden Sachverhalte entspricht dem Prinzip der Solidarität?",
+    question: "Die Solidarität ist ein gesellschaftspolitisches Prinzip, das in der Bundesrepublik Deutschland angewendet wird.Welcher der folgenden Sachverhalte entspricht dem Prinzip der Solidarität?",
     choices: [
         "Der Staat hebt die Beitragsbemessungsgrenze für die gesetzliche Krankenkasse an.",
         "Der Staat fordert verstärkt Selbstverantwortung bei der Altersvorsorge.",
@@ -246,7 +249,18 @@ const choicesDiv = document.getElementById("choices");
 const submitBtn = document.getElementById("submitBtn");
 const nextBtn = document.getElementById("nextBtn");
 const resultDiv = document.getElementById("result");
+const percentageDiv = document.getElementById("showPercentage");
 let selectedChoices = [];
+
+function getRandomVariant(variants) {
+    const randomNumber = Math.floor(Math.random() * variants.length);
+    return variants[randomNumber];
+}
+
+function showPercentage(){
+    const qData = `Answered Questions: ${answeredQuestions}<br>Correct Percentage: ${correctPercentage}%`;
+    document.getElementById('showPercentage').innerHTML = qData;
+}
 
 showExplanationBtn.addEventListener("click", function () {
     const currentQuestion = questionData[currentQuestionIndex];
@@ -296,11 +310,54 @@ function displayResult(correct) {
     });
 
     if (correct) {
-        resultDiv.textContent = "Correct! Well done!";
+        const correctVariants = ["Richtig, du hast es drauf in WISO!",
+    "Gut gemacht, du verstehst das in WISO!",
+    "Korrekt, du bist wirklich fit in WISO!",
+    "Genau, du beherrschst das Thema in WISO!",
+    "Perfekt, du bist ein Profi in WISO!",
+    "Exakt, du hast ein gutes Verständnis für WISO!",
+    "Bravo, du zeigst dein Können in WISO!",
+    "Stimmt, du bist echt stark in WISO!",
+    "Fantastisch, du hast es im Griff in WISO!",
+    "Absolut richtig, du bist ein WISO-Experte!"];
+        const randomCorrctResult = getRandomVariant(correctVariants);
+        resultDiv.textContent = randomCorrctResult;
         resultDiv.classList.add("text-success");
+        userCorrectAnswers++;
+        answeredQuestions++;
+        correctPercentage = Math.round((userCorrectAnswers/answeredQuestions) * 100);
+        //updateCookie(answeredQuestions, correctPercentage);
+        showPercentage();
+        console.log("correctAnswers: ", correctPercentage , " - answeredQuestions: ", answeredQuestions);
     } else {
-        resultDiv.textContent = "Incorrect. Please try again.";
+      const wrongVariants = ["Falsch!!! Du bist echt schwach in WISO, wahrscheinlich weil du immer mit der PS4 beschäftigt bist!",
+    "Das war leider falsch! Vielleicht liegt es daran, dass du mehr Zeit mit der PS4 verbringst als mit WISO.","Leider falsch! Vielleicht fehlte die Motivation, WISO zu üben, wenn die PS4 so verlockend ist.",
+    "Das war nicht richtig! Die PS4 mag Spaß machen, aber WISO ist genauso wichtig. Besser Glück beim nächsten Mal!",
+    "Falsch! Die PS4 kann warten, aber WISO ist jetzt wichtig. Vielleicht nächstes Mal besser vorbereiten!",
+    "Das ist nicht korrekt! WISO ist entscheidend, auch wenn die PS4 verlockend ist. Mehr Übung wird helfen!",
+    "Nicht richtig! Denk daran, dass WISO genauso wichtig ist wie Gaming. Vielleicht weniger PS4 und mehr WISO für bessere Ergebnisse!",
+    "Das war nicht die richtige Antwort. Du könntest WISO genauso genießen wie die PS4, wenn du dich mehr damit beschäftigst!",
+    "Falsch! WISO ist eine wichtige Fähigkeit. Wenn du weniger Zeit mit der PS4 verbringst, könntest du besser werden!",
+    "Das war leider nicht korrekt. Zeit, weniger PS4 zu spielen und mehr in WISO zu investieren! Du schaffst das!",
+    "Nicht ganz richtig! WISO ist genauso spannend wie die PS4, wenn du dich darauf einlässt. Mehr Übung wird den Unterschied machen!",
+    "Das ist nicht die richtige Antwort. Versuche, deine Zeit zwischen der PS4 und WISO auszubalancieren. Du wirst besser werden!", "Schade, das ist nicht korrekt! Netflix ist unterhaltsam, aber für WISO musst du anderswo suchen.",
+    "Falsch! Netflix bietet Unterhaltung, aber für WISO-Wissen gibt es bessere Quellen.",
+    "Das ist leider nicht richtig! Wende dich an zuverlässige Quellen für dein WISO-Wissen, nicht an Netflix.",
+    "Leider falsch! Netflix ist großartig für Filme, aber nicht für WISO-Inhalte.",
+    "Das war nicht die richtige Wahl. Netflix ist keine verlässliche Quelle für WISO-Wissen.",
+    "Nicht ganz! Für WISO gibt es spezifische Lernmaterialien, Netflix ist nicht eine davon.",
+    "Falsch! Netflix bietet Unterhaltung, aber für dein WISO-Wissen solltest du andere Quellen nutzen.",
+    "Das ist nicht korrekt! WISO-Inhalte findest du woanders, nicht auf Netflix.",
+    "Leider falsch! Netflix ist keine Plattform für schulische Inhalte wie WISO.",
+    "Das ist nicht die richtige Antwort. Netflix ist keine Wissensdatenbank für schulische Themen wie WISO."];
+        const randomWrongResult = getRandomVariant(wrongVariants);
+        resultDiv.textContent = randomWrongResult;
         resultDiv.classList.add("text-danger");
+        answeredQuestions++;
+        correctPercentage = Math.round((userCorrectAnswers/answeredQuestions) * 100);
+        showPercentage();
+        //updateCookie(answeredQuestions, correctPercentage);
+        console.log("answeredQuestions: ", answeredQuestions);
     }
 }
 
@@ -330,11 +387,13 @@ function displayRandomQuestion() {
 }
 
 submitBtn.addEventListener("click", function () {
+    console.log("answered");
     const currentQuestion = questionData[currentQuestionIndex];
     const correct = checkAnswers(selectedChoices, currentQuestion.correctAnswers);
     displayResult(correct);
     submitBtn.disabled = true;
     nextBtn.disabled = false;
+    //displayCookieData();
 });
 
 nextBtn.addEventListener("click", displayRandomQuestion);
